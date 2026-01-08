@@ -30,7 +30,7 @@ const Navbar = () => {
     >
       <div className="nav-glass rounded-full px-6 py-3 flex items-center justify-between">
         <a href="#home" className="text-xl font-bold font-heading tracking-tight">
-          SAYAN ADHIKARY
+          Prathiksha
         </a>
 
         {/* Desktop Navigation */}
