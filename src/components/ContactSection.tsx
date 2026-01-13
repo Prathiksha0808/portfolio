@@ -2,8 +2,6 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
-
-
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -22,15 +20,15 @@ const ContactSection = () => {
 
     emailjs
       .send(
-        "service_w6m5dz9",
-        "template_dzzqlps",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
         },
-        "RKUpLrMYUfP43TUC8"
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
         alert("Message sent successfully ");
