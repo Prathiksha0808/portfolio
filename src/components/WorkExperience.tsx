@@ -60,7 +60,7 @@ export default function WorkExperience() {
                 <h3 className="text-2xl font-bold font-heading leading-tight">
                   {exp.role}
                 </h3>
-                <p className="gradient-text font-medium mt-1 ">{exp.company}</p>
+                <p className="text-muted-foreground">{exp.company}</p>
               </div>
             </div>
 
