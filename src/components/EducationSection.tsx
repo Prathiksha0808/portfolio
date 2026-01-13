@@ -1,27 +1,21 @@
-import { GraduationCap, MapPin } from 'lucide-react';
+import { GraduationCap, MapPin } from "lucide-react";
 
 const education = [
   {
-    degree: 'B.Tech. in Computer Science & Engineering',
-    period: '2022 - 2026',
-    institution: 'Techno Engineering College, Banipur',
-    location: 'Banipur, North 24 PGS',
-    grade: '7.34 CGPA',
-    achievements: [
-      'Maintaining excellent academic performance.',
-      'Working on various software development projects.',
-    ],
+    degree: "Master of Computer Applications (MCA)",
+    period: "2024- 2026",
+    institution: "Manipal Institute of Technology,Manipal",
+    location: "Udupi, Karnataka",
+    grade: "8.5 CGPA",
+    achievements: ["Maintaining excellent academic performance."],
   },
   {
-    degree: 'Higher Secondary (Science)',
-    period: '2020 - 2021',
-    institution: 'Habra High School (H.S)',
-    location: 'Habra, North 24 PGS',
-    grade: '89%',
-    achievements: [
-      'Specialized in Computer Science and Mathematics.',
-      'Achieved outstanding results in Computer Science in board examinations.',
-    ],
+    degree: "Bachelor of Computer Applications (BCA)",
+    period: "2021 - 2024",
+    institution: "Mangalore University",
+    location: "Udupi, Karnataka",
+    grade: "9.6 CGPA",
+    achievements: ["Secured 7th rank at Mangalore University"],
   },
 ];
 
@@ -38,48 +32,49 @@ const EducationSection = () => {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto relative">
+        <div className="max-w-5xl mx-auto relative">
           {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-0.5" />
+          <div className="absolute left-3 lg:left-1/2 top-6 bottom-6 w-px bg-border" />
 
           {education.map((edu, index) => (
-            <div
-              key={index}
-              className={`relative flex flex-col md:flex-row gap-8 mb-12 ${
-                index % 2 === 0 ? 'md:flex-row-reverse' : ''
-              }`}
-            >
+            <div key={index} className="relative mb-16">
               {/* Timeline Dot */}
-              <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background -translate-x-1/2 z-10" />
-
-              {/* Date Badge - Desktop */}
-              <div className="hidden md:flex flex-1 items-start justify-end">
-                <div
-                  className={`px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium text-primary ${
-                    index % 2 === 0 ? 'md:text-left' : 'md:text-right'
-                  }`}
-                >
-                  {edu.period}
-                </div>
-              </div>
+              <div className="absolute left-3 lg:left-1/2 top-6 w-3 h-3 bg-primary rounded-full -translate-x-1/2 z-10" />
 
               {/* Content Card */}
-              <div className="flex-1 ml-12 md:ml-0">
-                <div className="glass-card rounded-2xl p-6 hover:border-primary/30 transition-all duration-300">
-                  {/* Mobile Date */}
-                  <div className="md:hidden mb-4">
-                    <span className="px-3 py-1 bg-primary/10 border border-primary/30 rounded-full text-xs font-medium text-primary">
-                      {edu.period}
-                    </span>
-                  </div>
-
+              <div
+                className={`w-full lg:w-[46%] pl-8 lg:pl-0 ${
+                  index % 2 === 0
+                    ? "md:mr-auto lg:pl-12"
+                    : "md:ml-auto lg:pr-12"
+                }`}
+              >
+                <div
+                  className="glass-card rounded-2xl p-6 md:pr-24
+ hover:border-primary/30 transition-all duration-300 relative"
+                >
                   <div className="flex items-start gap-4 mb-4">
                     <div className="p-2 bg-primary/10 rounded-lg">
                       <GraduationCap className="text-primary" size={24} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold font-heading">{edu.degree}</h3>
+                      <h3 className="text-xl font-bold font-heading">
+                        {edu.degree}
+                      </h3>
+                      {/* Year Badge */}
+                      <span
+                        className="hidden md:inline-block absolute top-4 right-4 px-3 py-1 
+  bg-primary/10 border border-primary/30 
+  rounded-full text-xs font-medium text-primary"
+                      >
+                        {edu.period}
+                      </span>
+
                       <p className="text-muted-foreground">{edu.institution}</p>
+                      {/* Mobile Year */}
+                      <span className="md:hidden mt-2 inline-block text-xs font-medium text-primary bg-primary/10 border border-primary/30 rounded-full px-3 py-1">
+                        {edu.period}
+                      </span>
                     </div>
                   </div>
 
@@ -98,7 +93,10 @@ const EducationSection = () => {
                     </h4>
                     <ul className="space-y-1">
                       {edu.achievements.map((achievement, i) => (
-                        <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                        <li
+                          key={i}
+                          className="text-sm text-muted-foreground flex items-start gap-2"
+                        >
                           <span className="text-primary mt-1">•</span>
                           {achievement}
                         </li>

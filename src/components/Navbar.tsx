@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
   { name: 'Education', href: '#education' },
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
@@ -30,11 +31,11 @@ const Navbar = () => {
     >
       <div className="nav-glass rounded-full px-6 py-3 flex items-center justify-between">
         <a href="#home" className="text-xl font-bold font-heading tracking-tight">
-          SAYAN ADHIKARY
+          Prathiksha
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+<div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -55,15 +56,16 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2"
+          className="lg:hidden p-2"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden mt-2 nav-glass rounded-2xl p-4 space-y-2">
+    {isMobileMenuOpen && (
+  <div className="lg:hidden mt-2 nav-glass rounded-2xl p-4 space-y-2">
+
           {navLinks.map((link) => (
             <a
               key={link.name}

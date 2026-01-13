@@ -1,6 +1,5 @@
 const skills = [
-  'React', 'MongoDB', 'HTML', 'CSS', 'Tailwind CSS', 'Node.js', 'Express.js',
-  'Postman', 'Firebase', 'Python', 'Flask', 'JavaScript', 'TypeScript', 'GitHub', 'Git', 'Next.js',
+  'React', 'MongoDB', 'HTML', 'CSS', 'Tailwind CSS', 'Node.js',  'Firebase',  'JavaScript', 'TypeScript', 'GitHub', 'Git', 'SQL',
 ];
 
 const SkillBadge = ({ skill }: { skill: string }) => (
