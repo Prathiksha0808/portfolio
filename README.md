@@ -32,5 +32,3 @@ The goal of this project is to present my profile in a clean, user-friendly, and
 - Easy to maintain and scale
 
 
-# Start development server
-npm run dev
