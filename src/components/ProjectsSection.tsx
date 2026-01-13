@@ -1,38 +1,40 @@
-import { ExternalLink, Github, Maximize2 } from 'lucide-react';
+import { ExternalLink, Github, Maximize2 } from "lucide-react";
 
 const projects = [
   {
-    title: 'Crypto Verse – Digital Assets Hub',
+    title: "Movie Streaming Web Application ",
     description:
-      'Built a cryptocurrency tracking platform that consolidated live prices, market stats, and news into one dashboard, reducing information lookup time by 40%.',
+      "Developed a movie browsing web application that allows users to explore trending movies and TV shows, view detailed information, and search content through an intuitive and responsive interface.",
     details:
-      'Integrated CoinRanking API & News API via RapidAPI, improving data accuracy and enabling real-time updates within 2s latency.',
-    technologies: ['Next.js', 'React', 'Tailwind CSS', 'Redux Toolkit', 'Chart.js', 'RapidAPI'],
-    codeUrl: 'https://github.com/sayanadhi03/Crypto-Verse',
-    liveUrl: 'https://crypto-verse-kappa.vercel.app/',
-    image: 'https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&auto=format&fit=crop&q=60',
+      "Integrated the TMDB API to fetch real-time movie and TV show data, including ratings, overviews, and genres. Implemented dynamic routing, search functionality, and optimized UI performance for a smooth user experience across devices.",
+    technologies: ["React", "Vite", "Tailwind CSS", "TMDB API"],
+    codeUrl: "https://github.com/Prathiksha0808/Movie_app",
+    liveUrl: "https://movie-app-inky-kappa.vercel.app/",
+    image:
+      "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: 'AI Thief Detection System',
+    title: "Bakeshop Management System ",
     description:
-      'Built a real-time object detection security system using TensorFlow.js (COCO-SSD) for browser-based AI inference.',
+      "Developed a web-based online bakery application that allows users to browse products, register accounts, manage a shopping cart, and place orders through a simple and user-friendly interface.",
     details:
-      'Implemented person detection with bounding boxes and audio alerts, running entirely on the client-side for privacy.',
-    technologies: ['Next.js', 'TensorFlow.js', 'React', 'Tailwind CSS'],
-    codeUrl: 'https://github.com/sayanadhi03/AI-Thief-Detector',
-    liveUrl: 'https://ai-thief-detector-gamma.vercel.app/',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=60',
+      "Built using PHP and MySQL with features including user authentication, product management, order processing, and an admin panel to manage product listings, track inventory, and oversee customer orders. Implemented responsive layouts for smooth usage across devices.",
+    technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+    codeUrl: "https://github.com/Prathiksha0808/BakeShop",
+    image:
+      "https://images.unsplash.com/photo-1652891771857-e9c2dc024f9e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: 'Weather App 🌤️',
+    title: "EPay Android Digital Wallet Application",
     description:
-      'Built a modern weather application providing real-time weather data, 5-day forecasts, and AQI information for cities worldwide.',
+      "Developed an Android-based digital wallet application that enables users to securely manage wallet balance, add money, make payments, and view transaction history through a simple and intuitive interface.",
     details:
-      'Integrated Air Quality Index with health insights and multi-city weather tracking for comprehensive environmental monitoring.',
-    technologies: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion'],
-    codeUrl: 'https://github.com/sayanadhi03/weather-app',
-    liveUrl: 'https://weather-app-eight-livid-25.vercel.app/',
-    image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&auto=format&fit=crop&q=60',
+      "Built using Java and Firebase, the application includes user authentication, real-time wallet balance updates, payment processing, and transaction tracking. Implemented Firebase services for backend data storage and user management as part of an academic mini project.",
+    technologies: ["Java", "Android", "Firebase", "XML"],
+
+    codeUrl: "https://github.com/AnanyaBhatN/Epay-android-application",
+    image:
+      "https://images.unsplash.com/photo-1705948482595-606e2848c65b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -42,13 +44,10 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="section-title mb-4">
-            Interactive <span className="gradient-text">Project</span> Showcase
+           <span className="gradient-text">Project</span> Showcase
           </h2>
           <p className="section-subtitle mx-auto">
-            Explore my portfolio projects with interactive following pointer effects
-          </p>
-          <p className="text-sm text-muted-foreground mt-4">
-            Hover over any card to experience the magic ✨
+            Explore my projects
           </p>
         </div>
 
@@ -65,17 +64,19 @@ const ProjectsSection = () => {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
-                <button className="absolute top-4 right-4 p-2 bg-background/80 backdrop-blur-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Maximize2 size={18} />
-                </button>
               </div>
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold font-heading mb-3">{project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-3">{project.description}</p>
-                <p className="text-muted-foreground text-sm mb-4">{project.details}</p>
+                <h3 className="text-xl font-bold font-heading mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground text-sm mb-3">
+                  {project.description}
+                </p>
+                <p className="text-muted-foreground text-sm mb-4">
+                  {project.details}
+                </p>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -100,26 +101,21 @@ const ProjectsSection = () => {
                     <Github size={16} />
                     Code
                   </a>
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg text-sm font-medium text-white hover:opacity-90 transition-opacity"
-                  >
-                    <ExternalLink size={16} />
-                    Live Demo
-                  </a>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg text-sm font-medium text-white hover:opacity-90 transition-opacity"
+                    >
+                      <ExternalLink size={16} />
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-secondary/50 border border-border/50 rounded-full text-sm text-muted-foreground">
-            <span>Hover over any project card to see the following pointer effect</span>
-            <span className="text-primary">Interactive Experience</span>
-          </div>
         </div>
       </div>
     </section>

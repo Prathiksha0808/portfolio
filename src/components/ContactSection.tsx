@@ -1,21 +1,57 @@
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { useState } from "react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
+
+
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
+  const [isSending, setIsSending] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+
+    if (isSending) return;
+
+    setIsSending(true);
+
+    emailjs
+      .send(
+        "service_w6m5dz9",
+        "template_dzzqlps",
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "RKUpLrMYUfP43TUC8"
+      )
+      .then(() => {
+        alert("Message sent successfully ");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      })
+      .catch(() => {
+        alert("Something went wrong ");
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -34,7 +70,9 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Info */}
           <div>
-            <h3 className="text-2xl font-bold font-heading mb-8">Get in Touch</h3>
+            <h3 className="text-2xl font-bold font-heading mb-8">
+              Get in Touch
+            </h3>
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
@@ -43,8 +81,11 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Email</p>
-                  <a href="mailto:sayanadhikary003@gmail.com" className="font-medium hover:text-primary transition-colors">
-                    sayanadhikary003@gmail.com
+                  <a
+                    href="mailto:kotianprathiksha08@gmail.com"
+                    className="font-medium hover:text-primary transition-colors"
+                  >
+                    kotianprathiksha08@gmail.com
                   </a>
                 </div>
               </div>
@@ -55,8 +96,11 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Phone</p>
-                  <a href="tel:+919339712883" className="font-medium hover:text-primary transition-colors">
-                    +91 93397 12883
+                  <a
+                    href="tel:+919019945055"
+                    className="font-medium hover:text-primary transition-colors"
+                  >
+                    +91 90000 00000
                   </a>
                 </div>
               </div>
@@ -67,7 +111,9 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Location</p>
-                  <p className="font-medium">Kolkata, West Bengal, India</p>
+                  <p className="font-medium hover:text-primary">
+                    Udupi, Karnataka, India
+                  </p>
                 </div>
               </div>
             </div>
@@ -77,7 +123,10 @@ const ContactSection = () => {
           <div className="glass-card rounded-2xl p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-2"
+                >
                   Name
                 </label>
                 <input
@@ -93,7 +142,10 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2"
+                >
                   Email
                 </label>
                 <input
@@ -109,7 +161,10 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium mb-2"
+                >
                   Subject
                 </label>
                 <input
@@ -125,7 +180,10 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium mb-2"
+                >
                   Message
                 </label>
                 <textarea
@@ -142,10 +200,11 @@ const ContactSection = () => {
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg font-medium text-white hover:opacity-90 transition-opacity"
+                disabled={isSending}
+                className="w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg font-medium text-white hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 <Send size={18} />
-                Send Message
+                {isSending ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>

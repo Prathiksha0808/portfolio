@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { MapPin, Github, Linkedin } from "lucide-react";
 import profileImage from "@/assets/profile-image.jpg";
 
-const roles = ["REACT DEVELOPER", " "];
+const roles = ["REACT DEVELOPER"];
 
 const HeroSection = () => {
   const [currentRole, setCurrentRole] = useState(0);
@@ -17,7 +17,7 @@ const HeroSection = () => {
           if (displayText.length < role.length) {
             setDisplayText(role.slice(0, displayText.length + 1));
           } else {
-            setTimeout(() => setIsDeleting(true), 1500);
+            setTimeout(() => setIsDeleting(true), 1800);
           }
         } else {
           if (displayText.length > 0) {
@@ -47,10 +47,10 @@ const HeroSection = () => {
       {/* Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           {/* Left Content */}
-          <div className="flex-1 text-center lg:text-left">
+          <div className="max-w-xl text-center lg:text-left ">
             <h1 className="text-5xl md:text-7xl font-bold font-heading mb-4">
               Hey, I'm <span className="gradient-text">Prathiksha</span>
             </h1>
@@ -60,7 +60,7 @@ const HeroSection = () => {
               <span>Karnataka, India</span>
             </div>
 
-            <div className="text-xl md:text-2xl font-medium mb-8 h-8">
+            <div className="text-xl md:text-3xl font-semibold font-heading tracking-[0.18em] text-white/80 mb-8 h-8">
               <span>{displayText}</span>
               <span className="animate-blink text-primary">|</span>
             </div>
@@ -75,7 +75,7 @@ const HeroSection = () => {
                 <Github size={24} />
               </a>
               <a
-                href="www.linkedin.com/in/prathiksha-23b740361/"
+                href="https://www.linkedin.com/in/prathiksha-23b740361/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-secondary/80 border border-border/50 rounded-xl hover:border-primary/50 hover:bg-secondary transition-all duration-300"
@@ -93,7 +93,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Content - Profile Image */}
-          <div className="flex-1 flex justify-center lg:justify-end relative">
+          <div className="lg:max-w-lg flex justify-center relative">
             <div className="relative">
               {/* Floating particles */}
               <div className="absolute top-10 -left-10 w-2 h-2 bg-orange-400/60 rounded-full animate-float" />
