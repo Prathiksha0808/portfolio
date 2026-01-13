@@ -3,7 +3,6 @@
 Welcome to my personal portfolio website!  
 This project showcases my skills, projects, and experience as a developer.
 
----
 
 ## 📌 About the Project
 
@@ -14,7 +13,7 @@ This is a modern, responsive portfolio built to highlight:
 
 The goal of this project is to present my profile in a clean, user-friendly, and professional way.
 
----
+
 
 ## 🛠️ Tech Stack
 
@@ -24,7 +23,6 @@ The goal of this project is to present my profile in a clean, user-friendly, and
 - **shadcn/ui**
 - **Lucide Icons**
 
----
 
 ## ✨ Features
 
