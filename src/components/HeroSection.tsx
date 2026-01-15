@@ -82,13 +82,6 @@ const HeroSection = () => {
               >
                 <Linkedin size={24} />
               </a>
-              <a
-                href="https://drive.google.com/file/d/1yucwOXhqpZzxeVfid30tICb8fhoK8VmK/view?usp=sharing"
-                className="flex items-center gap-2 px-6 py-3 bg-secondary/80 border border-border/50 rounded-xl hover:border-primary/50 hover:bg-secondary transition-all duration-300"
-              >
-                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                Resume
-              </a>
             </div>
           </div>
 
