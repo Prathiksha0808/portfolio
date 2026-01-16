@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail,  MapPin, Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
@@ -84,21 +84,6 @@ const ContactSection = () => {
                     className="font-medium hover:text-primary transition-colors"
                   >
                     kotianprathiksha08@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-primary/10 rounded-xl">
-                  <Phone className="text-primary" size={24} />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">Phone</p>
-                  <a
-                    href="tel:+919019945055"
-                    className="font-medium hover:text-primary transition-colors"
-                  >
-                    +91 90000 00000
                   </a>
                 </div>
               </div>
